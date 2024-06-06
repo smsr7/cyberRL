@@ -1,0 +1,144 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: LADDER Train",
+            "type": "python",
+            "request": "launch",
+            "program": "marlon/baseline_models/ppo/train_ladder.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: DeepQ Train",
+            "type": "python",
+            "request": "launch",
+            "program": "marlon/native_models/deepq/qtrain.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python: TabularQ Train",
+            "type": "python",
+            "request": "launch",
+            "program": "marlon/native_models/tabularq/tabqtrain.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python: PPO Train",
+            "type": "python",
+            "request": "launch",
+            "program": "marlon/baseline_models/ppo/train_steps.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: PPO Evaluate",
+            "type": "python",
+            "request": "launch",
+            "program": "marlon/baseline_models/ppo/eval_ladder.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: PPO Train Defender",
+            "type": "python",
+            "request": "launch",
+            "program": "marlon/baseline_models/ppo/train_defender.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: PPO Evaluate Defender",
+            "type": "python",
+            "request": "launch",
+            "program": "marlon/baseline_models/ppo/eval_defender.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: PPO Train Marl",
+            "type": "python",
+            "request": "launch",
+            "program": "marlon/baseline_models/ppo/train_marl.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: PPO Evaluate Marl",
+            "type": "python",
+            "request": "launch",
+            "program": "marlon/baseline_models/ppo/eval_marl.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: A2C Train",
+            "type": "python",
+            "request": "launch",
+            "program": "marlon/baseline_models/a2c/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: A2C Evaluate",
+            "type": "python",
+            "request": "launch",
+            "program": "marlon/baseline_models/a2c/eval.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: A2C Train Defender",
+            "type": "python",
+            "request": "launch",
+            "program": "marlon/baseline_models/a2c/train_defender.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: A2C Evaluate Defender",
+            "type": "python",
+            "request": "launch",
+            "program": "marlon/baseline_models/a2c/eval_defender.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: A2C Train Marl",
+            "type": "python",
+            "request": "launch",
+            "program": "marlon/baseline_models/a2c/train_marl.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: A2C Evaluate Marl",
+            "type": "python",
+            "request": "launch",
+            "program": "marlon/baseline_models/a2c/eval_marl.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: Testbed",
+            "type": "python",
+            "request": "launch",
+            "program": "testbed.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: Evaluate",
+            "type": "python",
+            "request": "launch",
+            "program": "evaluate.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+    ]
+}
