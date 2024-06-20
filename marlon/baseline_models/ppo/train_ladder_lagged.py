@@ -8,7 +8,7 @@ from marlon.baseline_models.multiagent.baseline_marlon_agent import LoadFileBase
 from marlon.baseline_models.multiagent.multiagent_universe import MultiAgentUniverse
 from marlon.baseline_models.multiagent.random_marlon_agent import RandomAgentBuilder
 
-ENV_MAX_TIMESTEPS = 5000
+ENV_MAX_TIMESTEPS = 10000
 LEARN_TIMESTEPS = 10000
 LEARN_EPISODES = 10000 # Set this to a large value to stop at LEARN_TIMESTEPS instead.
 ATTACKER_INVALID_ACTION_REWARD_MODIFIER = 0
@@ -101,7 +101,7 @@ def train(step=0, evaluate_after=False, max_episodes=20, defense_start=True, fir
                             ),
                     defender_builder=LoadFileBaselineAgentBuilder(
                             alg_type=PPO,
-                            file_path=f'{SAVE_DIR}/{step-1}_{DEFENDER_SAVE_PATH}'
+                            file_path=f'{SAVE_DIR}/{step-3 if first else step-1}_{DEFENDER_SAVE_PATH}'
                             ), 
                     attacker_invalid_action_reward_modifier=ATTACKER_INVALID_ACTION_REWARD_MODIFIER,
                     attacker_invalid_action_reward_multiplier=ATTACKER_INVALID_ACTION_REWARD_MULTIPLIER,
