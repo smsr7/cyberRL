@@ -13,7 +13,7 @@ from marlon.baseline_models.env_wrappers.environment_event_source import Environ
 
 from marlon.baseline_models.env_wrappers.attack_wrapper import AttackerEnvWrapper
 #from marlon.baseline_models.env_wrappers.defend_wrapper import DefenderEnvWrapper
-from marlon.baseline_models.env_wrappers.defend_wrapper_delay_two import DefenderEnvWrapper
+from marlon.baseline_models.env_wrappers.defend_wrapper_random import DefenderEnvWrapper
 from marlon.baseline_models.multiagent.evaluation_stats import EvalutionStats
 from marlon.baseline_models.multiagent.marlon_agent import MarlonAgent
 from marlon.baseline_models.multiagent import marl_algorithm

@@ -22,7 +22,7 @@ def plot_data(evaluate=False, lag=0, attacker=True):
     highlight_span = 6
 
     # Directory where data files are stored
-    data_dir = 'model_saves/ladder_20240612_032539'
+    data_dir = 'model_saves/ladder_20240618_131013_3_2'
     file_path = f'{data_dir}/{file_name}'
 
     # Read the data from the CSV file
@@ -82,5 +82,5 @@ def plot_data(evaluate=False, lag=0, attacker=True):
     plt.savefig(f'plots/{data_dir.split("/")[1]}_{"eval" if evaluate else "train"}_out.png')
 
 # Example of calling the function
-plot_data(evaluate=False, lag=0.6, attacker=True)  # For training data
+plot_data(evaluate=False, lag=0, attacker=True)  # For training data
 #plot_data(evaluate=True)   # For evaluation data

@@ -4,8 +4,8 @@ from marlon.baseline_models.multiagent.baseline_marlon_agent import BaselineAgen
 from marlon.baseline_models.multiagent.multiagent_universe import MultiAgentUniverse
 
 ENV_MAX_TIMESTEPS = 1500
-LEARN_TIMESTEPS = 300_000
-LEARN_EPISODES = 10000 # Set this to a large value to stop at LEARN_TIMESTEPS instead.
+LEARN_TIMESTEPS = 480_000
+LEARN_EPISODES = 1200000 # Set this to a large value to stop at LEARN_TIMESTEPS instead.
 ATTACKER_INVALID_ACTION_REWARD_MODIFIER = 0
 ATTACKER_INVALID_ACTION_REWARD_MULTIPLIER = 0
 DEFENDER_INVALID_ACTION_REWARD = -1

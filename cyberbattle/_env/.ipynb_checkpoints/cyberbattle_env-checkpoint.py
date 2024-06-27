@@ -994,7 +994,7 @@ class CyberBattleEnv(gym.Env):
 
         if owned_count < goal.own_atleast:
             return False
-
+        
         if owned_count / self.__node_count < goal.own_atleast_percent:
             return False
 
@@ -1081,6 +1081,8 @@ class CyberBattleEnv(gym.Env):
             network_availability=self._defender_actuator.network_availability)
         self.__episode_rewards.append(reward)
 
+        self.network_infectivity = len(self.__get__owned_nodes_indices()) / self.__node_count
+        self.network_availability = self._defender_actuator.network_availability
         return observation, reward, self.__done, info
 
     def reset(self) -> Observation:
@@ -1091,6 +1093,9 @@ class CyberBattleEnv(gym.Env):
         observation['discovered_nodes_properties'] = self.__get_property_matrix()
         observation['nodes_privilegelevel'] = self.__get_privilegelevel_array()
         self.__owned_nodes_indices_cache = None
+        self.network_availability = self._defender_actuator.network_availability
+        self.network_infectivity = len(self.__get__owned_nodes_indices()) / self.__node_count
+        
         return observation
 
     def render_as_fig(self):

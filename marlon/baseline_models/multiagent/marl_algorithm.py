@@ -166,6 +166,7 @@ def run_episode(
 
     attacker_rewards = []
     defender_rewards = []
+    defender_actions = []
     
     dones1 = False
     dones2 = False
@@ -200,6 +201,7 @@ def run_episode(
                 simulation.append(generate_graph_json(cyber_env, n_steps+1, sum(attacker_rewards), sum(defender_rewards)))
         else:
             action2 = defender_agent.predict(observation=obs2)
+        
             obs2, rewards2, dones2, info2 = defender_agent.env.step(action2)
             if isinstance(rewards2, np.ndarray):
                 rewards2 = rewards2[0]
@@ -212,7 +214,7 @@ def run_episode(
             )
 
             defender_rewards.append(rewards2)
-
+            defender_actions.append(action2[0])
             # If there is a jump in the reward for this step, record it for UI display.
             if is_simulation and (rewards1 > 0 or rewards2 > 0 or n_steps == max_steps-1):
                 simulation.append(generate_graph_json(cyber_env, n_steps+1, sum(attacker_rewards), sum(defender_rewards)))
@@ -224,4 +226,4 @@ def run_episode(
 
         n_steps += 1
 
-    return attacker_rewards, defender_rewards, simulation
+    return attacker_rewards, defender_rewards, defender_actions, simulation

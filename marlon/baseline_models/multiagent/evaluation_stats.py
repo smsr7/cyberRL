@@ -17,7 +17,12 @@ class EvalutionStats:
         attacker_invalid_actions: List[float],
         defender_rewards: Optional[List[float]],
         defender_valid_actions: Optional[List[float]],
-        defender_invalid_actions: Optional[List[float]]) -> None:
+        defender_invalid_actions: Optional[List[float]],
+        mean_network_infected: Optional[List[float]],
+        std_network_infected: Optional[List[float]],
+        min_network_availability: Optional[List[float]],
+        std_network_availability: Optional[List[float]],
+        mean_network_availability: Optional[List[float]]) -> None:
 
         self.episode_steps = np.array(episode_steps)
 
@@ -48,6 +53,15 @@ class EvalutionStats:
             self.std_defender_valid = np.std(defender_valid_actions)
             self.mean_defender_invalid = np.mean(defender_invalid_actions)
             self.std_defender_invalid = np.std(defender_invalid_actions)
+            
+            self.mean_network_availability = np.mean(mean_network_availability)
+            self.std_network_availability = np.mean(std_network_availability)
+            self.min_network_availability = np.mean(min_network_availability)
+            
+            
+            self.mean_network_infected = np.mean(mean_network_infected)
+            self.std_network_infected = np.mean(std_network_infected)
+            
         else:
             self.mean_defender_reward = None
             self.std_defender_reward = None
@@ -90,4 +104,13 @@ class EvalutionStats:
             logger.info('|   Invalid Actions:    |')
             logger.info('|      mean: %.2f', self.mean_defender_invalid)
             logger.info('|      std_dev: %.2f', self.std_defender_invalid)
+            logger.info('|                       |')
+            logger.info('|   Network Availability:|')
+            logger.info('|      mean: %.2f', self.mean_network_availability)
+            logger.info('|      std_dev: %.2f', self.std_network_availability)
+            logger.info('|      min: %.2f', self.min_network_availability)
+            logger.info('|                       |')
+            logger.info('|   Network Infected:   |')
+            logger.info('|      mean: %.2f', self.mean_network_infected)
+            logger.info('|      std_dev: %.2f', self.std_network_infected)  
             logger.info('-------------------------')
